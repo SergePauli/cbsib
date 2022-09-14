@@ -1,0 +1,17 @@
+[Unit]
+  Description=www.cbsib.ru
+    
+ 
+[Service]
+  ExecStart=/bin/bash /usr/local/bin/cbsib_start.sh
+  ExecStop=/bin/bash /usr/local/bin/cbsib_stop.sh	
+  Type=idle
+  KillMode=process
+ 
+  SyslogIdentifier=cbsib
+  SyslogFacility=daemon
+ 
+  Restart=on-failure
+ 
+[Install]
+  WantedBy=multi-user.target
